@@ -1,0 +1,491 @@
+{"text": "hi there", "intent": "greet"}
+{"text": "hello", "intent": "greet"}
+{"text": "hey, good morning", "intent": "greet"}
+{"text": "good afternoon", "intent": "greet"}
+{"text": "hi, how are you", "intent": "greet"}
+{"text": "hello, is anyone there", "intent": "greet"}
+{"text": "hey there", "intent": "greet"}
+{"text": "greetings", "intent": "greet"}
+{"text": "hi, I need some help", "intent": "greet"}
+{"text": "good evening", "intent": "greet"}
+{"text": "hello, can you help me", "intent": "greet"}
+{"text": "hey, are you a bot", "intent": "greet"}
+{"text": "hi, I just arrived", "intent": "greet"}
+{"text": "morning", "intent": "greet"}
+{"text": "hello there friend", "intent": "greet"}
+{"text": "hiya", "intent": "greet"}
+{"text": "hey, quick question", "intent": "greet"}
+{"text": "hi, I hope you can assist", "intent": "greet"}
+{"text": "thanks, that's all", "intent": "goodbye"}
+{"text": "bye", "intent": "goodbye"}
+{"text": "goodbye", "intent": "goodbye"}
+{"text": "see you later", "intent": "goodbye"}
+{"text": "I'm done for now", "intent": "goodbye"}
+{"text": "that's everything, thanks", "intent": "goodbye"}
+{"text": "have a good day", "intent": "goodbye"}
+{"text": "I will hang up now", "intent": "goodbye"}
+{"text": "nothing else, bye", "intent": "goodbye"}
+{"text": "we can end the chat", "intent": "goodbye"}
+{"text": "close this conversation", "intent": "goodbye"}
+{"text": "I'm all set", "intent": "goodbye"}
+{"text": "okay goodbye then", "intent": "goodbye"}
+{"text": "talk to you later", "intent": "goodbye"}
+{"text": "end session", "intent": "goodbye"}
+{"text": "that is all I needed", "intent": "goodbye"}
+{"text": "thanks for your help, bye", "intent": "goodbye"}
+{"text": "catch you later", "intent": "goodbye"}
+{"text": "thank you so much", "intent": "thanks"}
+{"text": "thanks", "intent": "thanks"}
+{"text": "thanks a lot", "intent": "thanks"}
+{"text": "I appreciate it", "intent": "thanks"}
+{"text": "that was helpful, thank you", "intent": "thanks"}
+{"text": "many thanks", "intent": "thanks"}
+{"text": "cheers, appreciate the help", "intent": "thanks"}
+{"text": "thank you for your assistance", "intent": "thanks"}
+{"text": "great, thanks", "intent": "thanks"}
+{"text": "thanks for sorting that out", "intent": "thanks"}
+{"text": "much appreciated", "intent": "thanks"}
+{"text": "thank you kindly", "intent": "thanks"}
+{"text": "thanks, that worked", "intent": "thanks"}
+{"text": "I'm grateful for the help", "intent": "thanks"}
+{"text": "perfect, thank you", "intent": "thanks"}
+{"text": "thanks for the quick reply", "intent": "thanks"}
+{"text": "appreciate it", "intent": "thanks"}
+{"text": "that's great, thanks a bunch", "intent": "thanks"}
+{"text": "yes", "intent": "affirm"}
+{"text": "yeah", "intent": "affirm"}
+{"text": "yep, that's right", "intent": "affirm"}
+{"text": "correct", "intent": "affirm"}
+{"text": "that is correct", "intent": "affirm"}
+{"text": "go ahead", "intent": "affirm"}
+{"text": "please do", "intent": "affirm"}
+{"text": "sounds good", "intent": "affirm"}
+{"text": "absolutely", "intent": "affirm"}
+{"text": "sure thing", "intent": "affirm"}
+{"text": "confirm", "intent": "affirm"}
+{"text": "yes please", "intent": "affirm"}
+{"text": "that works for me", "intent": "affirm"}
+{"text": "okay, proceed", "intent": "affirm"}
+{"text": "I agree", "intent": "affirm"}
+{"text": "yes, that is what I want", "intent": "affirm"}
+{"text": "looks right", "intent": "affirm"}
+{"text": "definitely", "intent": "affirm"}
+{"text": "no", "intent": "deny"}
+{"text": "nope", "intent": "deny"}
+{"text": "not really", "intent": "deny"}
+{"text": "that's wrong", "intent": "deny"}
+{"text": "don't do that", "intent": "deny"}
+{"text": "no thanks", "intent": "deny"}
+{"text": "stop, cancel that", "intent": "deny"}
+{"text": "negative", "intent": "deny"}
+{"text": "I don't want that", "intent": "deny"}
+{"text": "that is incorrect", "intent": "deny"}
+{"text": "not what I meant", "intent": "deny"}
+{"text": "no, change it", "intent": "deny"}
+{"text": "I'd rather not", "intent": "deny"}
+{"text": "please don't proceed", "intent": "deny"}
+{"text": "that's not right", "intent": "deny"}
+{"text": "no way", "intent": "deny"}
+{"text": "disagree", "intent": "deny"}
+{"text": "cancel, no", "intent": "deny"}
+{"text": "I want a refund", "intent": "request_refund"}
+{"text": "I need my money back", "intent": "request_refund"}
+{"text": "can you refund my order", "intent": "request_refund"}
+{"text": "issue a refund please", "intent": "request_refund"}
+{"text": "this product was defective, I want to return it", "intent": "request_refund"}
+{"text": "I was charged twice, please refund me", "intent": "request_refund"}
+{"text": "how do I get reimbursed", "intent": "request_refund"}
+{"text": "requesting a refund for my purchase", "intent": "request_refund"}
+{"text": "I'd like to return this item and get my money back", "intent": "request_refund"}
+{"text": "the item arrived broken, refund it", "intent": "request_refund"}
+{"text": "give me back what I paid", "intent": "request_refund"}
+{"text": "I am unhappy with the product and want a refund", "intent": "request_refund"}
+{"text": "please process a refund for ORD-1234", "intent": "request_refund"}
+{"text": "I sent it back, where is my refund", "intent": "request_refund"}
+{"text": "start a return and refund", "intent": "request_refund"}
+{"text": "I want to be compensated for the faulty item", "intent": "request_refund"}
+{"text": "refund request", "intent": "request_refund"}
+{"text": "the subscription charged me after I cancelled, I want a refund", "intent": "request_refund"}
+{"text": "where is my order", "intent": "check_order_status"}
+{"text": "track my package", "intent": "check_order_status"}
+{"text": "has my order shipped", "intent": "check_order_status"}
+{"text": "what's the status of ORD-1234", "intent": "check_order_status"}
+{"text": "when will my delivery arrive", "intent": "check_order_status"}
+{"text": "is my parcel out for delivery", "intent": "check_order_status"}
+{"text": "check order status", "intent": "check_order_status"}
+{"text": "I haven't received my order yet", "intent": "check_order_status"}
+{"text": "can you look up my shipment", "intent": "check_order_status"}
+{"text": "where is my package right now", "intent": "check_order_status"}
+{"text": "my tracking number isn't updating", "intent": "check_order_status"}
+{"text": "did my order ship already", "intent": "check_order_status"}
+{"text": "tell me the delivery date", "intent": "check_order_status"}
+{"text": "is the order on its way", "intent": "check_order_status"}
+{"text": "look up order ORD-7788", "intent": "check_order_status"}
+{"text": "my parcel seems delayed, where is it", "intent": "check_order_status"}
+{"text": "shipment progress please", "intent": "check_order_status"}
+{"text": "when is my stuff coming", "intent": "check_order_status"}
+{"text": "change my shipping address", "intent": "change_address"}
+{"text": "I moved, update my delivery address", "intent": "change_address"}
+{"text": "can I change where my order ships", "intent": "change_address"}
+{"text": "update the address on ORD-1234", "intent": "change_address"}
+{"text": "send it to my new place instead", "intent": "change_address"}
+{"text": "I need the package delivered to another address", "intent": "change_address"}
+{"text": "please correct the delivery address", "intent": "change_address"}
+{"text": "change the destination for my parcel", "intent": "change_address"}
+{"text": "I typed the wrong address, can you fix it", "intent": "change_address"}
+{"text": "redirect my shipment to a different city", "intent": "change_address"}
+{"text": "update my billing address", "intent": "change_address"}
+{"text": "my address changed, please update the order", "intent": "change_address"}
+{"text": "can you ship to my office instead", "intent": "change_address"}
+{"text": "modify the delivery location", "intent": "change_address"}
+{"text": "I want it sent somewhere else", "intent": "change_address"}
+{"text": "change address for the order", "intent": "change_address"}
+{"text": "new address for delivery", "intent": "change_address"}
+{"text": "switch the shipping address on my account", "intent": "change_address"}
+{"text": "cancel my order", "intent": "cancel_order"}
+{"text": "I want to cancel ORD-1234", "intent": "cancel_order"}
+{"text": "stop the shipment", "intent": "cancel_order"}
+{"text": "don't ship it", "intent": "cancel_order"}
+{"text": "cancel my purchase before it ships", "intent": "cancel_order"}
+{"text": "I changed my mind, cancel the order", "intent": "cancel_order"}
+{"text": "please cancel the item I just bought", "intent": "cancel_order"}
+{"text": "I ordered by mistake, cancel it", "intent": "cancel_order"}
+{"text": "can I stop the order from going out", "intent": "cancel_order"}
+{"text": "terminate my order", "intent": "cancel_order"}
+{"text": "cancel order ORD-5678", "intent": "cancel_order"}
+{"text": "I don't want the order anymore", "intent": "cancel_order"}
+{"text": "withdraw my purchase", "intent": "cancel_order"}
+{"text": "stop processing my order", "intent": "cancel_order"}
+{"text": "cancel the shipment please", "intent": "cancel_order"}
+{"text": "I need to undo my order", "intent": "cancel_order"}
+{"text": "abort the order", "intent": "cancel_order"}
+{"text": "cancel it before delivery", "intent": "cancel_order"}
+{"text": "book an appointment", "intent": "book_appointment"}
+{"text": "schedule a service visit", "intent": "book_appointment"}
+{"text": "I need to see someone next Tuesday", "intent": "book_appointment"}
+{"text": "set up a consultation", "intent": "book_appointment"}
+{"text": "make a booking for Friday at 3pm", "intent": "book_appointment"}
+{"text": "I'd like to arrange a meeting", "intent": "book_appointment"}
+{"text": "can I get an appointment this week", "intent": "book_appointment"}
+{"text": "reserve a slot for a technician", "intent": "book_appointment"}
+{"text": "I want to book a demo", "intent": "book_appointment"}
+{"text": "schedule time with your team", "intent": "book_appointment"}
+{"text": "arrange an onsite visit", "intent": "book_appointment"}
+{"text": "book me in for tomorrow", "intent": "book_appointment"}
+{"text": "I need an appointment for a repair", "intent": "book_appointment"}
+{"text": "create a new booking", "intent": "book_appointment"}
+{"text": "when can I come in", "intent": "book_appointment"}
+{"text": "set an appointment for next month", "intent": "book_appointment"}
+{"text": "I want to schedule a call", "intent": "book_appointment"}
+{"text": "sign me up for a session", "intent": "book_appointment"}
+{"text": "move my appointment", "intent": "reschedule_appointment"}
+{"text": "reschedule to next week", "intent": "reschedule_appointment"}
+{"text": "can I change my booking time", "intent": "reschedule_appointment"}
+{"text": "push my appointment to Friday", "intent": "reschedule_appointment"}
+{"text": "I need a different slot", "intent": "reschedule_appointment"}
+{"text": "change the date of my appointment", "intent": "reschedule_appointment"}
+{"text": "I can't make my booking, move it", "intent": "reschedule_appointment"}
+{"text": "shift my appointment later", "intent": "reschedule_appointment"}
+{"text": "something came up, can we move the meeting", "intent": "reschedule_appointment"}
+{"text": "reschedule my service visit", "intent": "reschedule_appointment"}
+{"text": "I need to change when I come in", "intent": "reschedule_appointment"}
+{"text": "move the booking to another day", "intent": "reschedule_appointment"}
+{"text": "can we find a new time for my appointment", "intent": "reschedule_appointment"}
+{"text": "change my appointment slot", "intent": "reschedule_appointment"}
+{"text": "postpone my consultation", "intent": "reschedule_appointment"}
+{"text": "I want a later appointment", "intent": "reschedule_appointment"}
+{"text": "adjust the time of my visit", "intent": "reschedule_appointment"}
+{"text": "swap my appointment to Monday", "intent": "reschedule_appointment"}
+{"text": "cancel my appointment", "intent": "cancel_appointment"}
+{"text": "I can't make it, cancel the booking", "intent": "cancel_appointment"}
+{"text": "call off my service visit", "intent": "cancel_appointment"}
+{"text": "remove my appointment", "intent": "cancel_appointment"}
+{"text": "I won't be able to attend, cancel please", "intent": "cancel_appointment"}
+{"text": "scrap my booking", "intent": "cancel_appointment"}
+{"text": "please cancel the meeting", "intent": "cancel_appointment"}
+{"text": "I need to cancel my consultation", "intent": "cancel_appointment"}
+{"text": "delete my appointment slot", "intent": "cancel_appointment"}
+{"text": "cancel the visit for tomorrow", "intent": "cancel_appointment"}
+{"text": "I no longer need the appointment", "intent": "cancel_appointment"}
+{"text": "withdraw my booking", "intent": "cancel_appointment"}
+{"text": "cancel appointment APT-2231", "intent": "cancel_appointment"}
+{"text": "I have to drop my session", "intent": "cancel_appointment"}
+{"text": "please remove me from the schedule", "intent": "cancel_appointment"}
+{"text": "cancel the technician visit", "intent": "cancel_appointment"}
+{"text": "I need to back out of my appointment", "intent": "cancel_appointment"}
+{"text": "scrub the booking I made", "intent": "cancel_appointment"}
+{"text": "why was I charged", "intent": "billing_question"}
+{"text": "explain my invoice", "intent": "billing_question"}
+{"text": "my bill is higher than expected", "intent": "billing_question"}
+{"text": "I see a charge I don't recognize", "intent": "billing_question"}
+{"text": "how does billing work", "intent": "billing_question"}
+{"text": "when will I be billed", "intent": "billing_question"}
+{"text": "update my payment method", "intent": "billing_question"}
+{"text": "I need a copy of my receipt", "intent": "billing_question"}
+{"text": "why did my subscription price go up", "intent": "billing_question"}
+{"text": "can I get an itemized bill", "intent": "billing_question"}
+{"text": "I was overcharged this month", "intent": "billing_question"}
+{"text": "where can I download my invoices", "intent": "billing_question"}
+{"text": "question about my payment", "intent": "billing_question"}
+{"text": "my card was declined", "intent": "billing_question"}
+{"text": "refund status on my credit card", "intent": "billing_question"}
+{"text": "how do I change my plan", "intent": "billing_question"}
+{"text": "explain the taxes on this bill", "intent": "billing_question"}
+{"text": "billing address for the invoice", "intent": "billing_question"}
+{"text": "the app keeps crashing", "intent": "technical_support"}
+{"text": "I can't log in", "intent": "technical_support"}
+{"text": "I'm getting an error message", "intent": "technical_support"}
+{"text": "the integration isn't working", "intent": "technical_support"}
+{"text": "my device won't connect", "intent": "technical_support"}
+{"text": "the website is down", "intent": "technical_support"}
+{"text": "reset my password", "intent": "technical_support"}
+{"text": "nothing loads when I open the page", "intent": "technical_support"}
+{"text": "I found a bug in the dashboard", "intent": "technical_support"}
+{"text": "the microphone is not detected", "intent": "technical_support"}
+{"text": "my login code never arrives", "intent": "technical_support"}
+{"text": "the API returns a 500 error", "intent": "technical_support"}
+{"text": "audio is cutting out during calls", "intent": "technical_support"}
+{"text": "the sync feature stopped working", "intent": "technical_support"}
+{"text": "I'm stuck on the loading screen", "intent": "technical_support"}
+{"text": "the bot doesn't understand me", "intent": "technical_support"}
+{"text": "there is a technical problem with my account", "intent": "technical_support"}
+{"text": "help me fix this error", "intent": "technical_support"}
+{"text": "let me talk to a person", "intent": "speak_to_human"}
+{"text": "connect me to an agent", "intent": "speak_to_human"}
+{"text": "I need a human", "intent": "speak_to_human"}
+{"text": "transfer me to support", "intent": "speak_to_human"}
+{"text": "can I speak with someone real", "intent": "speak_to_human"}
+{"text": "get me a representative", "intent": "speak_to_human"}
+{"text": "I want to talk to a live person", "intent": "speak_to_human"}
+{"text": "put me through to a human agent", "intent": "speak_to_human"}
+{"text": "this bot is useless, give me a person", "intent": "speak_to_human"}
+{"text": "escalate me to a manager", "intent": "speak_to_human"}
+{"text": "I would like to speak to customer service", "intent": "speak_to_human"}
+{"text": "hand this over to a human", "intent": "speak_to_human"}
+{"text": "can a real agent call me", "intent": "speak_to_human"}
+{"text": "I need a specialist", "intent": "speak_to_human"}
+{"text": "route me to a person", "intent": "speak_to_human"}
+{"text": "get a human on the line", "intent": "speak_to_human"}
+{"text": "I prefer to speak with an agent", "intent": "speak_to_human"}
+{"text": "transfer this chat to staff", "intent": "speak_to_human"}
+{"text": "I want to leave feedback", "intent": "provide_feedback"}
+{"text": "your service was terrible", "intent": "provide_feedback"}
+{"text": "I'm complaining about the support I got", "intent": "provide_feedback"}
+{"text": "give a compliment to the team", "intent": "provide_feedback"}
+{"text": "I'd like to file a complaint", "intent": "provide_feedback"}
+{"text": "the agent was rude to me", "intent": "provide_feedback"}
+{"text": "I want to praise your employee", "intent": "provide_feedback"}
+{"text": "here is my feedback on the service", "intent": "provide_feedback"}
+{"text": "I have a suggestion for the product", "intent": "provide_feedback"}
+{"text": "your team did a fantastic job", "intent": "provide_feedback"}
+{"text": "I want to report a bad experience", "intent": "provide_feedback"}
+{"text": "the support quality has gone downhill", "intent": "provide_feedback"}
+{"text": "I'd like to share my thoughts about the service", "intent": "provide_feedback"}
+{"text": "complaint about my last call", "intent": "provide_feedback"}
+{"text": "kudos to the support agent", "intent": "provide_feedback"}
+{"text": "this experience was disappointing", "intent": "provide_feedback"}
+{"text": "please pass on my feedback", "intent": "provide_feedback"}
+{"text": "rate my experience", "intent": "provide_feedback"}
+{"text": "what are your support hours", "intent": "ask_question"}
+{"text": "do you offer a warranty", "intent": "ask_question"}
+{"text": "how long does shipping take", "intent": "ask_question"}
+{"text": "can I pay with PayPal", "intent": "ask_question"}
+{"text": "is my data secure", "intent": "ask_question"}
+{"text": "do you integrate with Slack", "intent": "ask_question"}
+{"text": "what languages do you support", "intent": "ask_question"}
+{"text": "where are you located", "intent": "ask_question"}
+{"text": "what is your return policy", "intent": "ask_question"}
+{"text": "do you have a mobile app", "intent": "ask_question"}
+{"text": "how do I export my data", "intent": "ask_question"}
+{"text": "is there a free trial", "intent": "ask_question"}
+{"text": "what payment methods do you accept", "intent": "ask_question"}
+{"text": "can I use this offline", "intent": "ask_question"}
+{"text": "how many users are included", "intent": "ask_question"}
+{"text": "is there an enterprise plan", "intent": "ask_question"}
+{"text": "do you support single sign on", "intent": "ask_question"}
+{"text": "what is included in the subscription", "intent": "ask_question"}
+{"text": "hey, good to see you", "intent": "greet"}
+{"text": "hello, I could use a hand", "intent": "greet"}
+{"text": "hi, is this the support line", "intent": "greet"}
+{"text": "good morning to you", "intent": "greet"}
+{"text": "hey, can you assist me", "intent": "greet"}
+{"text": "hello again", "intent": "greet"}
+{"text": "hi, I have a problem", "intent": "greet"}
+{"text": "hey, anyone home", "intent": "greet"}
+{"text": "that is all", "intent": "goodbye"}
+{"text": "nothing more for now", "intent": "goodbye"}
+{"text": "I am finished", "intent": "goodbye"}
+{"text": "done here", "intent": "goodbye"}
+{"text": "we can stop now", "intent": "goodbye"}
+{"text": "I will go now", "intent": "goodbye"}
+{"text": "bye bye", "intent": "goodbye"}
+{"text": "no more questions", "intent": "goodbye"}
+{"text": "end the call", "intent": "goodbye"}
+{"text": "I have everything I need", "intent": "goodbye"}
+{"text": "signing off", "intent": "goodbye"}
+{"text": "I appreciate the support", "intent": "thanks"}
+{"text": "thanks for your patience", "intent": "thanks"}
+{"text": "great service, thank you", "intent": "thanks"}
+{"text": "you have been very helpful", "intent": "thanks"}
+{"text": "thanks for the information", "intent": "thanks"}
+{"text": "that is much better, thanks", "intent": "thanks"}
+{"text": "I owe you one", "intent": "thanks"}
+{"text": "thank you for taking care of it", "intent": "thanks"}
+{"text": "sure", "intent": "affirm"}
+{"text": "okay", "intent": "affirm"}
+{"text": "alright", "intent": "affirm"}
+{"text": "that is fine", "intent": "affirm"}
+{"text": "please continue", "intent": "affirm"}
+{"text": "affirmative", "intent": "affirm"}
+{"text": "I confirm", "intent": "affirm"}
+{"text": "do it please", "intent": "affirm"}
+{"text": "of course", "intent": "affirm"}
+{"text": "sounds perfect", "intent": "affirm"}
+{"text": "that works", "intent": "affirm"}
+{"text": "yes indeed", "intent": "affirm"}
+{"text": "please go ahead with it", "intent": "affirm"}
+{"text": "that is acceptable", "intent": "affirm"}
+{"text": "no, that is not right", "intent": "deny"}
+{"text": "nope, wrong", "intent": "deny"}
+{"text": "do not continue", "intent": "deny"}
+{"text": "I said no", "intent": "deny"}
+{"text": "not correct", "intent": "deny"}
+{"text": "please stop", "intent": "deny"}
+{"text": "I do not agree", "intent": "deny"}
+{"text": "that is not what I want", "intent": "deny"}
+{"text": "definitely not", "intent": "deny"}
+{"text": "incorrect", "intent": "deny"}
+{"text": "I would rather you did not", "intent": "deny"}
+{"text": "no, do not do it", "intent": "deny"}
+{"text": "where is my stuff", "intent": "check_order_status"}
+{"text": "any news on my delivery", "intent": "check_order_status"}
+{"text": "status update on the parcel", "intent": "check_order_status"}
+{"text": "is it shipped yet", "intent": "check_order_status"}
+{"text": "my order has not arrived", "intent": "check_order_status"}
+{"text": "the tracking has not updated", "intent": "check_order_status"}
+{"text": "when is it due to arrive", "intent": "check_order_status"}
+{"text": "has it left the warehouse", "intent": "check_order_status"}
+{"text": "where is the courier", "intent": "check_order_status"}
+{"text": "the address is wrong", "intent": "change_address"}
+{"text": "send it to another location", "intent": "change_address"}
+{"text": "amend where it is going", "intent": "change_address"}
+{"text": "new delivery destination", "intent": "change_address"}
+{"text": "ship to my work address", "intent": "change_address"}
+{"text": "I need it redirected", "intent": "change_address"}
+{"text": "update the shipping details", "intent": "change_address"}
+{"text": "deliver to Toronto instead", "intent": "change_address"}
+{"text": "I want it sent to my office", "intent": "change_address"}
+{"text": "cancel the purchase", "intent": "cancel_order"}
+{"text": "I do not want it anymore", "intent": "cancel_order"}
+{"text": "stop the order", "intent": "cancel_order"}
+{"text": "call off the order", "intent": "cancel_order"}
+{"text": "cancel my latest order", "intent": "cancel_order"}
+{"text": "do not send the item", "intent": "cancel_order"}
+{"text": "undo the purchase", "intent": "cancel_order"}
+{"text": "get me a slot", "intent": "book_appointment"}
+{"text": "I want to come in", "intent": "book_appointment"}
+{"text": "schedule a visit", "intent": "book_appointment"}
+{"text": "book a technician", "intent": "book_appointment"}
+{"text": "arrange an appointment", "intent": "book_appointment"}
+{"text": "find an available time", "intent": "book_appointment"}
+{"text": "set up a meeting", "intent": "book_appointment"}
+{"text": "I need a session with your team", "intent": "book_appointment"}
+{"text": "move it to another day", "intent": "reschedule_appointment"}
+{"text": "can we change the appointment", "intent": "reschedule_appointment"}
+{"text": "I need to postpone", "intent": "reschedule_appointment"}
+{"text": "push the booking back", "intent": "reschedule_appointment"}
+{"text": "reschedule my slot", "intent": "reschedule_appointment"}
+{"text": "a different time please", "intent": "reschedule_appointment"}
+{"text": "shift the consultation", "intent": "reschedule_appointment"}
+{"text": "change the booking date", "intent": "reschedule_appointment"}
+{"text": "cancel my booking", "intent": "cancel_appointment"}
+{"text": "I cannot come", "intent": "cancel_appointment"}
+{"text": "remove the appointment", "intent": "cancel_appointment"}
+{"text": "call off the visit", "intent": "cancel_appointment"}
+{"text": "drop my booking", "intent": "cancel_appointment"}
+{"text": "cancel the scheduled visit", "intent": "cancel_appointment"}
+{"text": "I will not make the appointment", "intent": "cancel_appointment"}
+{"text": "cancel the session", "intent": "cancel_appointment"}
+{"text": "explain the charge", "intent": "billing_question"}
+{"text": "what is this fee", "intent": "billing_question"}
+{"text": "invoice question", "intent": "billing_question"}
+{"text": "my statement is wrong", "intent": "billing_question"}
+{"text": "payment failed", "intent": "billing_question"}
+{"text": "update billing details", "intent": "billing_question"}
+{"text": "why am I being charged", "intent": "billing_question"}
+{"text": "I need a refund to my card", "intent": "billing_question"}
+{"text": "the price on my invoice is incorrect", "intent": "billing_question"}
+{"text": "login is broken", "intent": "technical_support"}
+{"text": "the app will not open", "intent": "technical_support"}
+{"text": "I see error code 500", "intent": "technical_support"}
+{"text": "the website is not responding", "intent": "technical_support"}
+{"text": "integration failure", "intent": "technical_support"}
+{"text": "microphone issue", "intent": "technical_support"}
+{"text": "password reset is not working", "intent": "technical_support"}
+{"text": "the page will not load", "intent": "technical_support"}
+{"text": "agent please", "intent": "speak_to_human"}
+{"text": "a real person please", "intent": "speak_to_human"}
+{"text": "human support", "intent": "speak_to_human"}
+{"text": "transfer me", "intent": "speak_to_human"}
+{"text": "customer service representative", "intent": "speak_to_human"}
+{"text": "I need to speak to staff", "intent": "speak_to_human"}
+{"text": "can someone call me", "intent": "speak_to_human"}
+{"text": "complaint", "intent": "provide_feedback"}
+{"text": "praise", "intent": "provide_feedback"}
+{"text": "feedback about the service", "intent": "provide_feedback"}
+{"text": "rate the service", "intent": "provide_feedback"}
+{"text": "suggestion for improvement", "intent": "provide_feedback"}
+{"text": "I want to commend an agent", "intent": "provide_feedback"}
+{"text": "the service was not good enough", "intent": "provide_feedback"}
+{"text": "support hours", "intent": "ask_question"}
+{"text": "warranty", "intent": "ask_question"}
+{"text": "shipping cost", "intent": "ask_question"}
+{"text": "paypal", "intent": "ask_question"}
+{"text": "security", "intent": "ask_question"}
+{"text": "slack integration", "intent": "ask_question"}
+{"text": "languages", "intent": "ask_question"}
+{"text": "location", "intent": "ask_question"}
+{"text": "return window", "intent": "ask_question"}
+{"text": "mobile app", "intent": "ask_question"}
+{"text": "export data", "intent": "ask_question"}
+{"text": "free trial", "intent": "ask_question"}
+{"text": "payment methods", "intent": "ask_question"}
+{"text": "offline mode", "intent": "ask_question"}
+{"text": "number of seats", "intent": "ask_question"}
+{"text": "enterprise plan", "intent": "ask_question"}
+{"text": "sso support", "intent": "ask_question"}
+{"text": "subscription includes", "intent": "ask_question"}
+{"text": "that will be all", "intent": "goodbye"}
+{"text": "that is everything I needed", "intent": "goodbye"}
+{"text": "that was really useful", "intent": "thanks"}
+{"text": "that is really helpful", "intent": "thanks"}
+{"text": "that is not correct", "intent": "deny"}
+{"text": "that is incorrect, no", "intent": "deny"}
+{"text": "please reimburse me for the purchase", "intent": "request_refund"}
+{"text": "I want to be reimbursed for this order", "intent": "request_refund"}
+{"text": "what happened to my parcel", "intent": "check_order_status"}
+{"text": "what happened to my order", "intent": "check_order_status"}
+{"text": "what is happening with my delivery", "intent": "check_order_status"}
+{"text": "I would like to reschedule the service call", "intent": "reschedule_appointment"}
+{"text": "can we move the service call", "intent": "reschedule_appointment"}
+{"text": "the mobile app freezes", "intent": "technical_support"}
+{"text": "the mobile app keeps freezing", "intent": "technical_support"}
+{"text": "the app crashes when I open it", "intent": "technical_support"}
+{"text": "I am unable to sign in", "intent": "technical_support"}
+{"text": "I cannot sign in to my account", "intent": "technical_support"}
+{"text": "I want to make a complaint about the service", "intent": "provide_feedback"}
+{"text": "I want to file a complaint", "intent": "provide_feedback"}
+{"text": "make a complaint", "intent": "provide_feedback"}
+{"text": "can I connect this to Microsoft Teams", "intent": "ask_question"}
+{"text": "does this connect to Microsoft Teams", "intent": "ask_question"}
+{"text": "is there a Microsoft Teams integration", "intent": "ask_question"}
+{"text": "do you have a Teams integration", "intent": "ask_question"}
+{"text": "connect this to teams", "intent": "ask_question"}
+{"text": "I want to connect it to teams", "intent": "ask_question"}
+{"text": "that isn't right", "intent": "deny"}
+{"text": "that wasn't correct", "intent": "deny"}
+{"text": "it isn't what I asked for", "intent": "deny"}
+{"text": "connect me with someone", "intent": "speak_to_human"}
+{"text": "connect me to someone", "intent": "speak_to_human"}
+{"text": "is the product covered by a warranty", "intent": "ask_question"}
+{"text": "does the product have a warranty", "intent": "ask_question"}

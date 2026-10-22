@@ -1,0 +1,9 @@
+{
+  "id": "cancel_order_success",
+  "description": "Cancel a processing order.",
+  "turns": [
+    {"text": "cancel my order ORD-4821", "expect": {"intent": "cancel_order", "flow": "cancel_order"}},
+    {"text": "yes", "expect": {"contains": ["cancelled"]}}
+  ],
+  "final": {"resolved": true, "handoff": false}
+}

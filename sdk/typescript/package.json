@@ -1,0 +1,15 @@
+{
+  "name": "@conversaflow/sdk",
+  "version": "1.0.0",
+  "description": "TypeScript client for the ConversaFlow conversational AI runtime.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "node --test tests/*.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}

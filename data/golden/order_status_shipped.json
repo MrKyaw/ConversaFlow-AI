@@ -1,0 +1,9 @@
+{
+  "id": "order_status_shipped",
+  "description": "Look up a shipped order.",
+  "turns": [
+    {"text": "where is my order ORD-1234", "expect": {"intent": "check_order_status", "flow": "order_status", "contains": ["shipped", "UPS"]}},
+    {"text": "no, that's all", "expect": {"handoff": false}}
+  ],
+  "final": {"resolved": true, "handoff": false}
+}

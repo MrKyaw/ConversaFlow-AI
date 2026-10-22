@@ -1,0 +1,57 @@
+{
+  "id": "cancel_appointment",
+  "name": "Cancel appointment",
+  "description": "Cancel an existing appointment after confirmation.",
+  "version": 1,
+  "triggers": {"intents": ["cancel_appointment"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "appointment_id",
+      "type": "appointment_id",
+      "prompt": "I can cancel that. What is the appointment reference? It looks like APT-2231.",
+      "retry_prompt": "I need the appointment reference, for example APT-2231.",
+      "required": true
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["appointment_id"], "next": "confirm"},
+    {
+      "id": "confirm",
+      "type": "confirm",
+      "prompt": "Cancel ${slots.appointment_id}? This cannot be undone.",
+      "message": "Okay, I will leave it as it is.",
+      "next": "cancel"
+    },
+    {
+      "id": "cancel",
+      "type": "tool",
+      "tool": "appointment.cancel",
+      "args": {"appointment_id": "${slots.appointment_id}"},
+      "message": "${slots.appointment_id} has been cancelled.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not cancel it: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "scheduling",
+      "reason": "appointment_cancel_failed",
+      "message": "Let me connect you with the scheduling team."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "scheduling"
+}

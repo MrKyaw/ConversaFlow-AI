@@ -1,0 +1,77 @@
+{
+  "id": "technical_support",
+  "name": "Technical support",
+  "description": "Capture an issue, escalate urgent sentiment, and open a ticket.",
+  "version": 1,
+  "triggers": {"intents": ["technical_support"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "issue",
+      "type": "text",
+      "prompt": "Sorry you are hitting trouble. What exactly is going wrong?",
+      "retry_prompt": "Please describe the problem in a few words.",
+      "required": true,
+      "min_length": 3,
+      "max_length": 500
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["issue"], "next": "urgency"},
+    {
+      "id": "urgency",
+      "type": "branch",
+      "transitions": [
+        {"when": {"var": "sentiment.score", "op": "lte", "value": -0.5}, "goto": "urgent"}
+      ],
+      "default": "normal"
+    },
+    {
+      "id": "urgent",
+      "type": "tool",
+      "tool": "ticket.create",
+      "args": {
+        "subject": "${slots.issue}",
+        "description": "${slots.issue}",
+        "priority": "high"
+      },
+      "message": "I have opened high-priority ticket ${result.ticket_id}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "normal",
+      "type": "tool",
+      "tool": "ticket.create",
+      "args": {
+        "subject": "${slots.issue}",
+        "description": "${slots.issue}",
+        "priority": "normal"
+      },
+      "message": "I have opened ticket ${result.ticket_id}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "A support engineer will follow up by email. Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not open the ticket: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "technical_support",
+      "reason": "ticket_creation_failed",
+      "message": "Let me connect you with a technical specialist."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "technical_support"
+}

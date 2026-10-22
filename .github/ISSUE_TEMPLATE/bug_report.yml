@@ -1,0 +1,15 @@
+name: Bug report
+description: Report a reproducible runtime or SDK defect.
+labels: [bug]
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include version, environment, minimal inputs, expected behavior, and actual behavior. Redact secrets and customer data.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant redacted logs

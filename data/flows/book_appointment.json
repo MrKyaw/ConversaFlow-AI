@@ -1,0 +1,84 @@
+{
+  "id": "book_appointment",
+  "name": "Book an appointment",
+  "description": "Collect service, date and time, confirm, then book.",
+  "version": 1,
+  "triggers": {"intents": ["book_appointment"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "service",
+      "type": "enum",
+      "prompt": "What type of appointment do you need: repair, consultation, installation or demo?",
+      "retry_prompt": "Please choose one of: repair, consultation, installation or demo.",
+      "required": true,
+      "enum": ["repair", "consultation", "installation", "demo"]
+    },
+    {
+      "name": "date",
+      "type": "date",
+      "prompt": "What date works for you? You can say something like next Tuesday or 2026-11-10.",
+      "retry_prompt": "I could not read that date. Try a date such as next Tuesday or 2026-11-10.",
+      "required": true
+    },
+    {
+      "name": "time",
+      "type": "time",
+      "prompt": "What time would you like?",
+      "retry_prompt": "What time works, for example 3pm or 15:30?",
+      "required": true
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["service", "date", "time"], "next": "confirm"},
+    {
+      "id": "confirm",
+      "type": "confirm",
+      "prompt": "I will book a ${slots.service} on ${slots.date} at ${slots.time}. Shall I proceed?",
+      "message": "No problem, let's pick a different time.",
+      "deny_next": "retry",
+      "next": "book"
+    },
+    {
+      "id": "retry",
+      "type": "say",
+      "message": "Let's choose another slot.",
+      "clear_slots": ["date", "time"],
+      "next": "collect"
+    },
+    {
+      "id": "book",
+      "type": "tool",
+      "tool": "appointment.book",
+      "args": {
+        "service": "${slots.service}",
+        "date": "${slots.date}",
+        "time": "${slots.time}"
+      },
+      "message": "Booked. Your reference is ${result.appointment_id} for a ${result.service} on ${result.date} at ${result.time}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "You will receive a confirmation shortly. Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not complete the booking: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "scheduling",
+      "reason": "appointment_booking_failed",
+      "message": "Let me connect you with the scheduling team."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "scheduling"
+}

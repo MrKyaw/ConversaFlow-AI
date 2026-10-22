@@ -1,0 +1,12 @@
+{
+  "id": "book_appointment_success",
+  "description": "Book a repair appointment.",
+  "turns": [
+    {"text": "I want to book an appointment", "expect": {"intent": "book_appointment", "flow": "book_appointment", "handoff": false}},
+    {"text": "repair", "expect": {"contains": ["date"]}},
+    {"text": "2026-11-10", "expect": {"contains": ["time"]}},
+    {"text": "3pm", "expect": {"contains": ["Shall I proceed", "repair"]}},
+    {"text": "yes", "expect": {"contains": ["Booked", "APT-"]}}
+  ],
+  "final": {"resolved": true, "handoff": false}
+}

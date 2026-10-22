@@ -1,0 +1,12 @@
+{
+  "id": "change_address_success",
+  "description": "Change the address of an order that has not shipped.",
+  "turns": [
+    {"text": "I need to change my delivery address", "expect": {"intent": "change_address", "flow": "change_address", "handoff": false}},
+    {"text": "ORD-4821", "expect": {"contains": ["street address"]}},
+    {"text": "123 Main Street", "expect": {"contains": ["city"]}},
+    {"text": "Vancouver", "expect": {"contains": ["confirm", "ORD-4821"]}},
+    {"text": "yes", "expect": {"contains": ["Done", "Vancouver"]}}
+  ],
+  "final": {"resolved": true, "handoff": false, "slots": {"order_id": "ORD-4821", "city": "Vancouver"}}
+}

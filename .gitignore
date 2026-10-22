@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+junit*.xml
+reports/*.json
+reports/logs/
+var/
+models/*.json
+!models/.gitkeep
+
+# TypeScript SDK
+sdk/typescript/node_modules/
+sdk/typescript/dist/
+sdk/typescript/coverage/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.log
+
+# Local configuration
+.env

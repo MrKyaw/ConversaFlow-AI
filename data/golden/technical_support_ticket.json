@@ -1,0 +1,8 @@
+{
+  "id": "technical_support_ticket",
+  "description": "Open a normal-priority support ticket.",
+  "turns": [
+    {"text": "the app keeps crashing when I export reports", "expect": {"intent": "technical_support", "flow": "technical_support", "contains": ["ticket"]}}
+  ],
+  "final": {"resolved": true, "handoff": false}
+}

@@ -1,0 +1,83 @@
+{
+  "id": "reschedule_appointment",
+  "name": "Reschedule appointment",
+  "description": "Move an existing appointment to a new date and time.",
+  "version": 1,
+  "triggers": {"intents": ["reschedule_appointment"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "appointment_id",
+      "type": "appointment_id",
+      "prompt": "Of course. What is the appointment reference? It looks like APT-2231.",
+      "retry_prompt": "I need the appointment reference, for example APT-2231.",
+      "required": true
+    },
+    {
+      "name": "date",
+      "type": "date",
+      "prompt": "What new date would you like?",
+      "retry_prompt": "I could not read that date. Try next Friday or 2026-11-10.",
+      "required": true
+    },
+    {
+      "name": "time",
+      "type": "time",
+      "prompt": "What new time works for you?",
+      "retry_prompt": "What time works, for example 3pm or 15:30?",
+      "required": true
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["appointment_id", "date", "time"], "next": "confirm"},
+    {
+      "id": "confirm",
+      "type": "confirm",
+      "prompt": "Move ${slots.appointment_id} to ${slots.date} at ${slots.time}. Is that right?",
+      "message": "Okay, let's choose a different slot.",
+      "deny_next": "retry",
+      "next": "move"
+    },
+    {
+      "id": "retry",
+      "type": "say",
+      "message": "Let's pick another time.",
+      "clear_slots": ["date", "time"],
+      "next": "collect"
+    },
+    {
+      "id": "move",
+      "type": "tool",
+      "tool": "appointment.reschedule",
+      "args": {
+        "appointment_id": "${slots.appointment_id}",
+        "date": "${slots.date}",
+        "time": "${slots.time}"
+      },
+      "message": "${result.appointment_id} is moved to ${result.date} at ${result.time}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "Your confirmation has been updated. Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not reschedule it: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "scheduling",
+      "reason": "appointment_reschedule_failed",
+      "message": "Let me connect you with the scheduling team."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "scheduling"
+}

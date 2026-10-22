@@ -1,0 +1,85 @@
+{
+  "id": "refund",
+  "name": "Refund request",
+  "description": "Collect order, reason and optional amount, confirm, then create a refund.",
+  "version": 1,
+  "triggers": {"intents": ["request_refund"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "order_id",
+      "type": "order_id",
+      "prompt": "I can help with that. What is the order ID? It looks like ORD-1234.",
+      "retry_prompt": "I still need an order ID in the format ORD-1234.",
+      "required": true
+    },
+    {
+      "name": "reason",
+      "type": "text",
+      "prompt": "What is the reason for the refund?",
+      "retry_prompt": "Please tell me briefly why you want a refund.",
+      "required": true,
+      "max_length": 300
+    },
+    {
+      "name": "amount",
+      "type": "money",
+      "prompt": "How much should be refunded?",
+      "required": false,
+      "min_value": 0.01
+    }
+  ],
+  "start": "intro",
+  "nodes": [
+    {"id": "intro", "type": "say", "message": "I am sorry about that. Let's sort it out.", "next": "collect"},
+    {"id": "collect", "type": "collect", "slots": ["order_id", "reason", "amount"], "next": "confirm"},
+    {
+      "id": "confirm",
+      "type": "confirm",
+      "prompt": "Just to confirm: a refund for ${slots.order_id} because ${slots.reason}. Is that correct?",
+      "message": "No problem, let's correct that.",
+      "deny_next": "retry",
+      "next": "process"
+    },
+    {
+      "id": "retry",
+      "type": "say",
+      "message": "Let's try again.",
+      "clear_slots": ["order_id", "reason", "amount"],
+      "next": "collect"
+    },
+    {
+      "id": "process",
+      "type": "tool",
+      "tool": "refund.create",
+      "args": {
+        "order_id": "${slots.order_id}",
+        "reason": "${slots.reason}",
+        "amount": "${slots.amount}"
+      },
+      "message": "Refund ${result.refund_id} is approved for ${result.amount_display}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "The money should appear within 3-5 business days. Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not process that refund: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "order_support",
+      "reason": "refund_tool_failed",
+      "message": "Let me connect you with an order specialist who can finish this."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "order_support"
+}

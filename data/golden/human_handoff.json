@@ -1,0 +1,8 @@
+{
+  "id": "human_handoff",
+  "description": "Customer requests a human agent.",
+  "turns": [
+    {"text": "I want to speak to a human", "expect": {"intent": "speak_to_human", "handoff": true, "contains": ["specialist"]}}
+  ],
+  "final": {"handoff": true}
+}

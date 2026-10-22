@@ -1,0 +1,85 @@
+{
+  "id": "change_address",
+  "name": "Change delivery address",
+  "description": "Update the delivery address of an order that has not shipped.",
+  "version": 1,
+  "triggers": {"intents": ["change_address"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "order_id",
+      "type": "order_id",
+      "prompt": "I can update that. Which order ID should I change?",
+      "retry_prompt": "I need the order ID, for example ORD-1234.",
+      "required": true
+    },
+    {
+      "name": "address",
+      "type": "text",
+      "prompt": "What is the full new street address?",
+      "retry_prompt": "Please give me the new street address, including the number.",
+      "required": true,
+      "min_length": 5,
+      "max_length": 200
+    },
+    {
+      "name": "city",
+      "type": "city",
+      "prompt": "Which city should it be delivered to?",
+      "retry_prompt": "Which city is the new address in?",
+      "required": true
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["order_id", "address", "city"], "next": "confirm"},
+    {
+      "id": "confirm",
+      "type": "confirm",
+      "prompt": "Please confirm: send ${slots.order_id} to ${slots.address}, ${slots.city}. Is that right?",
+      "message": "Okay, let's re-enter the address.",
+      "deny_next": "retry",
+      "next": "update"
+    },
+    {
+      "id": "retry",
+      "type": "say",
+      "message": "Let's start with the address again.",
+      "clear_slots": ["address", "city"],
+      "next": "collect"
+    },
+    {
+      "id": "update",
+      "type": "tool",
+      "tool": "order.update_address",
+      "args": {
+        "order_id": "${slots.order_id}",
+        "address": "${slots.address}",
+        "city": "${slots.city}"
+      },
+      "message": "Done. ${slots.order_id} will now be delivered to ${result.address}, ${result.city}.",
+      "next": "done",
+      "on_error": "failed"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "failed",
+      "type": "say",
+      "message": "I could not change the address: ${last_error}.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "order_support",
+      "reason": "address_update_failed",
+      "message": "Let me connect you with an order specialist."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "order_support"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "refund_happy_path",
+  "description": "Refund a delivered order, confirm, and verify the refund id.",
+  "turns": [
+    {"text": "I want a refund for order ORD-1234 because it arrived broken", "expect": {"intent": "request_refund", "flow": "refund", "handoff": false}},
+    {"text": "yes", "expect": {"intent": "affirm", "contains": ["REF-", "approved", "$89.50"]}},
+    {"text": "no, that's all", "expect": {"intent": "deny", "handoff": false}}
+  ],
+  "final": {"resolved": true, "handoff": false}
+}

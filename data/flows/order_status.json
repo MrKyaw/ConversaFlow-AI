@@ -1,0 +1,91 @@
+{
+  "id": "order_status",
+  "name": "Order status",
+  "description": "Look up an order and branch the response on fulfilment status.",
+  "version": 1,
+  "triggers": {"intents": ["check_order_status"], "min_confidence": 0.35},
+  "slots": [
+    {
+      "name": "order_id",
+      "type": "order_id",
+      "prompt": "Happy to check. What is the order ID? For example ORD-1234.",
+      "retry_prompt": "I need the order ID to look it up, for example ORD-1234.",
+      "required": true
+    }
+  ],
+  "start": "collect",
+  "nodes": [
+    {"id": "collect", "type": "collect", "slots": ["order_id"], "next": "lookup"},
+    {
+      "id": "lookup",
+      "type": "tool",
+      "tool": "order.lookup",
+      "args": {"order_id": "${slots.order_id}"},
+      "next": "route",
+      "on_error": "not_found"
+    },
+    {
+      "id": "route",
+      "type": "branch",
+      "transitions": [
+        {"when": {"var": "result.status", "op": "eq", "value": "shipped"}, "goto": "shipped"},
+        {"when": {"var": "result.status", "op": "eq", "value": "out_for_delivery"}, "goto": "out"},
+        {"when": {"var": "result.status", "op": "eq", "value": "delivered"}, "goto": "delivered"},
+        {"when": {"var": "result.status", "op": "eq", "value": "cancelled"}, "goto": "cancelled"}
+      ],
+      "default": "processing"
+    },
+    {
+      "id": "shipped",
+      "type": "say",
+      "message": "${slots.order_id} has shipped with ${result.carrier}. The estimated delivery date is ${result.eta}.",
+      "next": "done"
+    },
+    {
+      "id": "out",
+      "type": "say",
+      "message": "${slots.order_id} is out for delivery today with ${result.carrier}.",
+      "next": "done"
+    },
+    {
+      "id": "delivered",
+      "type": "say",
+      "message": "${slots.order_id} shows as delivered on ${result.eta}.",
+      "next": "done"
+    },
+    {
+      "id": "processing",
+      "type": "say",
+      "message": "${slots.order_id} is still being prepared. The estimated delivery date is ${result.eta}.",
+      "next": "done"
+    },
+    {
+      "id": "cancelled",
+      "type": "say",
+      "message": "${slots.order_id} is marked as cancelled, so it will not ship.",
+      "next": "done"
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "message": "Is there anything else I can help with?",
+      "resolution": "resolved"
+    },
+    {
+      "id": "not_found",
+      "type": "say",
+      "message": "I could not find that order: ${last_error}. Let me connect you with an order specialist.",
+      "next": "escalate"
+    },
+    {
+      "id": "escalate",
+      "type": "handoff",
+      "department": "order_support",
+      "reason": "order_lookup_failed",
+      "priority": "normal",
+      "message": "One moment while I transfer you."
+    }
+  ],
+  "max_retries": 2,
+  "handoff_department": "order_support"
+}
